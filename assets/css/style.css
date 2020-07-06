@@ -1,0 +1,38 @@
+.sun-icon {
+    background-image: url(https://image.flaticon.com/icons/png/128/979/979585.png);
+    background-size: cover;
+}
+
+.part-cloud-icon {
+    background-image: url(https://image.flaticon.com/icons/png/128/1146/1146869.png);
+    background-size: cover;
+}
+
+.cloud-icon {
+    background-image: url(https://image.flaticon.com/icons/png/128/414/414927.png);
+    background-size: cover;
+}
+
+.rain-icon {
+    background-image: url(https://image.flaticon.com/icons/png/128/414/414974.png);
+    background-size: cover;
+}
+
+.thunder-icon {
+    background-image: url(https://image.flaticon.com/icons/png/128/1146/1146860.png);
+    background-size: cover;
+}
+
+.snow-icon {
+    background-image: url(https://image.flaticon.com/icons/png/128/1200/1200430.png);
+    background-size: cover;
+}
+
+.fog-icon {
+    background-image: url(https://image.flaticon.com/icons/png/128/430/430470.png);
+    background-size: cover;
+}
+
+.gradient-background {
+    background: linear-gradient(20deg,#87c1ff,#007bff);
+}

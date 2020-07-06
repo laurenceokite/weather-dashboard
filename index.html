@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <div class="row no-gutters">
+        <header class="col-12 navbar gradient-background d-flex justify-content-end pr-5 pt-5">
+            <h1 class="text-white mt-3">Weather Dashboard</h1>
+        </header>
+        <!-- search bar -->
+        <div id="search-area" class="col-12 col-xl-3 bg-light">
+            <div class="input-group p-4">
+                <input id="search-bar" type="text" class="form-control" id="citySearch" placeholder="Madison">
+                <div class="input-group-append">
+                    <button class="btn btn-primary">
+                        <svg style="fill: white; width: 17; height: 17;" class="pb-1" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                            <path d="M3.5 0c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5c.59 0 1.17-.14 1.66-.41a1 1 0 0 0 .13.13l1 1a1.02 1.02 0 1 0 1.44-1.44l-1-1a1 1 0 0 0-.16-.13c.27-.49.44-1.06.44-1.66 0-1.93-1.57-3.5-3.5-3.5zm0 1c1.39 0 2.5 1.11 2.5 2.5 0 .66-.24 1.27-.66 1.72-.01.01-.02.02-.03.03a1 1 0 0 0-.13.13c-.44.4-1.04.63-1.69.63-1.39 0-2.5-1.11-2.5-2.5s1.11-2.5 2.5-2.5z"
+                            />
+                          </svg>
+                    </button>
+                </div>
+            </div> 
+            <div class="m-3">
+                <ul id="storage-list" class="list-group">
+                    
+                </ul>
+            </div>  
+        </div>
+        <div class=".d-none .d-xl-block m-3">
+            <ul id="storage-list" class="list-group">
+
+            </ul>
+        </div>
+        <main class="col m-3">
+            <!-- current weather -->
+            <div class="row mx-3">
+                <div id="current-weather" class="col-12 border border-secondary rounded pt-2 bg-light">
+                    <div class="d-flex align-items-center">
+                        <h2 id="city-name" class="text-primary pl-1"></h2>
+                        <strong id="current-date" class="text-secondary pl-2"></strong>
+                        <div id="current-icon" class="ml-2 mb-1" style="height: 2rem; width: 2rem;"></div>
+                    </div>
+                    <div class="row pl-2 mt-4 flex-column">
+                        <div class="col-8 col-lg-5  col-xl-4 d-flex justify-content-between">
+                            <p class="text-secondary">Temperature</p>
+                            <strong id="temperature"><span class="font-weight-lighter"> °F</span></strong>
+                        </div>
+                        <div class="col-8 col-lg-5  col-xl-4 d-flex justify-content-between">
+                            <p class="text-secondary">Humidity</p>
+                            <strong id="current-humidity"><span class="font-weight-lighter">%</span></strong>
+                        </div>
+                        <div class="col-8 col-lg-5 col-xl-4 d-flex justify-content-between">
+                            <p class="text-secondary">Wind Speed</p>
+                            <strong id="wind-speed"><span class="font-weight-lighter"> mph</span></strong>
+                        </div>
+                        <div class="col-8 col-lg-5 col-xl-4 d-flex justify-content-between align-items-center">
+                            <p class="text-secondary">UV Index</p>
+                            <p id="uv-index" class="badge badge-pill"></p>
+                        </div>
+                    </div> 
+                </div>
+                <!-- five day forecast -->
+                <div id="five-day" class="col-12 border border-secondary rounded pt-2 bg-light mt-4">
+                    <div class="row d-flex justify-content-center mx-1">
+                        <h4 class="col-12 text-center mb-3">Five Day Forecast</h4>
+                        <div id="day-1" class="card mb-3 mx-1" style="width: 10rem;">
+                            <div class="card-body border rounded bg-primary">
+                                <h5 class="card-title text-white text-center"></h5>
+                                <div class="d-flex justify-content-center my-2 mb-4">
+                                    <div id="icon" style="width: 3rem; height: 3rem;"></div>
+                                </div>    
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-text text-light">Temp</p>
+                                    <strong id="temp" class="card-text text-light"></strong>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-text text-light">Humidity</p>
+                                    <strong id="humidity" class="card-text text-light"></strong>
+                                </div>    
+                            </div>
+                        </div>
+                        <div id="day-2" class="card mb-3 mx-1" style="width: 10rem;">
+                            <div class="card-body border rounded bg-primary">
+                                <h5 class="card-title text-white text-center"></h5>
+                                <div class="d-flex justify-content-center my-2 mb-4">
+                                    <div id="icon" style="width: 3rem; height: 3rem;"></div>
+                                </div>    
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-text text-light">Temp</p>
+                                    <strong id="temp" class="card-text text-light"></strong>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-text text-light">Humidity</p>
+                                    <strong id="humidity" class="card-text text-light"></strong>
+                                </div>    
+                            </div>
+                        </div>
+                        <div id="day-3" class="card mb-3 mx-1" style="width: 10rem;">
+                            <div class="card-body border rounded bg-primary">
+                                <h5 class="card-title text-white text-center"></h5>
+                                <div class="d-flex justify-content-center my-2 mb-4">
+                                    <div id="icon" style="width: 3rem; height: 3rem;"></div>
+                                </div>    
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-text text-light">Temp</p>
+                                    <strong id="temp" class="card-text text-light"></strong>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-text text-light">Humidity</p>
+                                    <strong id="humidity" class="card-text text-light"></strong>
+                                </div>    
+                            </div>
+                        </div>
+                        <div id="day-4" class="card mb-3 mx-1" style="width: 10rem;">
+                            <div class="card-body border rounded bg-primary">
+                                <h5 class="card-title text-white text-center"></h5>
+                                <div class="d-flex justify-content-center my-2 mb-4">
+                                    <div id="icon" style="width: 3rem; height: 3rem;"></div>
+                                </div>    
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-text text-light">Temp</p>
+                                    <strong id="temp" class="card-text text-light"></strong>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-text text-light">Humidity</p>
+                                    <strong id="humidity" class="card-text text-light"></strong>
+                                </div>    
+                            </div>
+                        </div>
+                        <div id="day-5" class="card mb-3 mx-1" style="width: 10rem;">
+                            <div class="card-body border rounded bg-primary">
+                                <h5 class="card-title text-white text-center"></h5>
+                                <div class="d-flex justify-content-center my-2 mb-4">
+                                    <div id="icon" style="width: 3rem; height: 3rem;"></div>
+                                </div>    
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-text text-light">Temp</p>
+                                    <strong id="temp" class="card-text text-light"></strong>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-text text-light">Humidity</p>
+                                    <strong id="humidity" class="card-text text-light"></strong>
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
