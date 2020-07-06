@@ -20,7 +20,7 @@ function getCurrentWeather(city) {
 };
 
 function getUv(lat, lon) {
-    fetch ('http://api.openweathermap.org/data/2.5/uvi?appid=d9589021f2b67ec4a8c541454e8c7ac7&lat=' + lat + '&lon=' + lon)
+    fetch ('https://api.openweathermap.org/data/2.5/uvi?appid=d9589021f2b67ec4a8c541454e8c7ac7&lat=' + lat + '&lon=' + lon)
     .then(function(response) {
         return response.json()
     })
@@ -95,7 +95,7 @@ function printCurrentWeather(cityName, code, currentTemp, currentHumidity, windS
 };
 
 function getFiveDay(city) {
-    fetch ('http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=imperial&appid=d9589021f2b67ec4a8c541454e8c7ac7')
+    fetch ('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=imperial&appid=d9589021f2b67ec4a8c541454e8c7ac7')
     .then(function(response) {
         return response.json()
     })
